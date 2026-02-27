@@ -1,0 +1,165 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: #c0c0c0;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+}
+
+.logo img {
+  height: 70px;
+}
+
+.cart-icon {
+  cursor: pointer;
+  font-size: 18px;
+  border: 1px solid #c0c0c0;
+  padding: 8px 15px;
+  transition: 0.3s;
+}
+
+.cart-icon:hover {
+  background-color: #c0c0c0;
+  color: #0f0f0f;
+}
+
+/* HERO */
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 42px;
+  font-weight: normal;
+}
+
+.hero button {
+  padding: 12px 30px;
+  border: 1px solid #c0c0c0;
+  background: transparent;
+  color: #c0c0c0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  background: #c0c0c0;
+  color: #0f0f0f;
+}
+
+/* PRODUCTS */
+.products {
+  padding: 80px 60px;
+}
+
+.products h2 {
+  margin-bottom: 40px;
+  font-weight: normal;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.product-card {
+  border: 1px solid #2a2a2a;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  border-color: #c0c0c0;
+}
+
+.product-card img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.product-card h3 {
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  margin-bottom: 15px;
+}
+
+.product-card button {
+  padding: 10px 20px;
+  border: 1px solid #c0c0c0;
+  background: transparent;
+  color: #c0c0c0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.product-card button:hover {
+  background: #c0c0c0;
+  color: #0f0f0f;
+}
+
+/* CART */
+.cart {
+  position: fixed;
+  right: -400px;
+  top: 0;
+  width: 350px;
+  height: 100%;
+  background: #111;
+  padding: 30px;
+  transition: 0.4s;
+  overflow-y: auto;
+  border-left: 1px solid #2a2a2a;
+}
+
+.cart.open {
+  right: 0;
+}
+
+.cart h3 {
+  margin-bottom: 20px;
+}
+
+.cart-total {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.checkout-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #c0c0c0;
+  background: transparent;
+  color: #c0c0c0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.checkout-btn:hover {
+  background: #c0c0c0;
+  color: #0f0f0f;
+}
