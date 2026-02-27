@@ -72,13 +72,39 @@ function scrollToProducts() {
   document.getElementById("products").scrollIntoView({ behavior: "smooth" });
 }
 
-function checkout() {
+async function checkout() {
   if (cart.length === 0) {
     alert("Seu carrinho está vazio.");
     return;
   }
 
-  alert("Integração com Mercado Pago será ativada na próxima etapa.");
+  const items = cart.map(product => ({
+    title: product.name,
+    quantity: 1,
+    unit_price: product.price,
+    currency_id: "BRL"
+  }));
+
+  try {
+    const response = await fetch("/.netlify/functions/create-payment", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ items })
+    });
+
+    const data = await response.json();
+
+    if (data.id) {
+      window.location.href = `https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=${data.id}`;
+    } else {
+      alert("Erro ao criar pagamento.");
+    }
+
+  } catch (error) {
+    alert("Erro ao conectar com o servidor.");
+  }
 }
 
 renderProducts();
